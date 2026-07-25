@@ -97,7 +97,6 @@ def whatsapp_send(contact_name: str, message: str) -> tuple[bool, str]:
     Resolves contact_name -> phone number via contacts.py, then sends via
     WhatsApp Web. Returns (success, reason) so the caller can give a
     specific spoken error instead of a flat "couldn't send".
-
     KNOWN FRAGILITY (test live before trusting this in front of anyone):
     - Requires web.whatsapp.com already logged in on your DEFAULT browser.
     - pywhatkit uses pyautogui to simulate an Enter keypress after
@@ -106,7 +105,8 @@ def whatsapp_send(contact_name: str, message: str) -> tuple[bool, str]:
     the WRONG window and the WhatsApp message never sends — silently.
     Don't touch your keyboard/mouse during the wait_time window.
     - tab_close=True closes the tab right after — if your internet is
-
+    slow, the message may not have sent yet when the tab closes.
+    """
     number = contacts.resolve_contact(contact_name)
     if number is None:
         return False, f"I don't have a contact saved for {contact_name}, boss."

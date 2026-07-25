@@ -114,8 +114,6 @@ def handle_command(text: str) -> str | None:
         if ok:
             return f"Sent your WhatsApp message to {contact}, boss."
         return reason or "Sorry boss, I couldn't send that WhatsApp message."
-    </br>
-    </br>
 
     if intent == "open_app":
         target = data["target"]
@@ -211,7 +209,7 @@ def main():
                     continue
 
             print("Processing...")
-            audio_np = np.frombuffer(recorded_bytes, dtype=np.int16)
+            audio_np = np.frombuffer(recorded_bytes, dtype=np.int16).copy()
 
             if np.abs(audio_np).mean() < 150:  # tune this threshold to your mic
                 print("(low signal, likely noise - skipping)")
@@ -276,7 +274,6 @@ def main():
     finally:
         stream.stop()
         stream.close()
-        tts_engine.stop()
         print("Cleanup complete.")
 
 
