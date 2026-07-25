@@ -1,0 +1,7 @@
+sounddevice
+webrtcvad
+pyttsx3
+numpy
+faster-whisper
+groq
+python-dotenv
