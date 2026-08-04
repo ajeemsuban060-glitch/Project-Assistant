@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@import "./theme.css";
+
+:root {
+  --background: #030712;
+  --foreground: #ffffff;
+
+  --primary: #36D7FF;
+  --secondary: #00F0FF;
+  --accent: #7B61FF;
+
+  --glass: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+body{
+
+background:
+radial-gradient(circle at top,
+rgba(54,215,255,.08),
+transparent 40%),
+
+radial-gradient(circle at right,
+rgba(123,97,255,.08),
+transparent 35%),
+
+#030712;
+
+color:white;
+
+overflow:hidden;
+
+}

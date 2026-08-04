@@ -139,7 +139,4 @@ MIT
 that ties Ajeem's local and cloud AI systems — including **TAMIL-AI.ME** —
 into one spoken interface.
 
-=======
-
-
 
